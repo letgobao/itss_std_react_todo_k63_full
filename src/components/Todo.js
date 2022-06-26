@@ -22,7 +22,6 @@ function Todo() {
   
   const handleCheck = async(item) => {
     const todo = doc(db,"todos",item.key)
-    console.log(todo.data)
     const newField = {done: !item.done}
     await updateDoc(todo,newField)
   };
